@@ -6,7 +6,7 @@ export default class CreateView extends JetView{
         return{
             view:"form",
             id:"id_create",
-            height:300,
+            height:200,
             elements:[
                 {
                     view:"text",
