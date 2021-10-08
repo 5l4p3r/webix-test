@@ -7,27 +7,7 @@ export default class TopView extends JetView{
 		var header = {
 			type:"header", template:this.app.config.name, css:"webix_header app_header"
 		};
-
-		var sidemenu = {
-			view:"sidemenu",
-			id: "sidemenu",
-			width: 200,
-			position: "left",
-			body:{
-				view:"list",
-				borderless:true,
-				scroll: false,
-				template: "<span class='webix_icon fa-#icon#'></span> #value#",
-				data:[
-					{id: 1, value: "Customers", icon: "user"},
-					{id: 2, value: "Products", icon: "cube"},
-					{id: 3, value: "Reports", icon: "line-chart"},
-					{id: 4, value: "Archives", icon: "database"},
-					{id: 5, value: "Settings", icon: "cog"}
-				]
-			}
-		}
-
+		
 		var menu = {
 			view:"menu",
 			id:"top:menu", 

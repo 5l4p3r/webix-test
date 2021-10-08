@@ -15,6 +15,11 @@ export default class DataView extends JetView{
 								icon:"wxi-user"
 							},
 							{
+								view:"label",
+								label:"Data Table",
+								width:120
+							},
+							{
 								view:"button",
 								value:"Create",
 								align:"left",
@@ -52,21 +57,21 @@ export default class DataView extends JetView{
 																css:"webix_primary",
 																width:500,
 																click:function(){
-																	if($$("id_title") == "" || $$("id_content") == ""){
-																		Swal.fire("Fire is empty !")
-																	}else{
-																		try {
-																			const fdata = {
-																				userid: 1,
-																				title: $$("id_title").getValue(),
-																				content: $$("id_content").getValue()
-																			}
+																	const fdata = {
+																		userid: 1,
+																		title: $$("id_title").getValue(),
+																		content: $$("id_content").getValue()
+																	}
+																	try {
+																		if($$("id_title").getValue() === "" || $$("id_content").getValue() === ""){
+																			Swal.fire("Fire is empty !")
+																		}else{
 																			webix.ajax().post('https://sanctumtyo.herokuapp.com/api/article',fdata).then(()=>{
 																				Swal.fire('Data Created !').then(()=>window.location.reload())
 																			})
-																		} catch (error) {
-																			console.log(error);
 																		}
+																	} catch (error) {
+																		console.log(error);
 																	}
 																}
 															}

@@ -5,9 +5,19 @@ export default class ProfileView extends JetView{
         return {
             rows:[
                 {
-                    view:"template",
-                    template:"Profile",
-                    height:50
+                    view:"toolbar",
+                    cols:[
+                        {
+                            view:"icon",
+                            icon:"wxi-user"
+                        },
+                        {
+                            view:"label",
+                            label:"Profile",
+                            inputWidth:100, 
+                            align:"left"
+                        }
+                    ]
                 },
                 {
                     view:"template",
