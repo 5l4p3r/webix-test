@@ -35,6 +35,6 @@
   },
   "dependencies": {
     "sweetalert2": "^11.1.7",
-    "webix-jet": "^2.1.2"
+    "webix-jet": "^2.1.3"
   }
 }

@@ -8,14 +8,37 @@ export default class TopView extends JetView{
 			type:"header", template:this.app.config.name, css:"webix_header app_header"
 		};
 
+		var sidemenu = {
+			view:"sidemenu",
+			id: "sidemenu",
+			width: 200,
+			position: "left",
+			body:{
+				view:"list",
+				borderless:true,
+				scroll: false,
+				template: "<span class='webix_icon fa-#icon#'></span> #value#",
+				data:[
+					{id: 1, value: "Customers", icon: "user"},
+					{id: 2, value: "Products", icon: "cube"},
+					{id: 3, value: "Reports", icon: "line-chart"},
+					{id: 4, value: "Archives", icon: "database"},
+					{id: 5, value: "Settings", icon: "cog"}
+				]
+			}
+		}
+
 		var menu = {
-			view:"menu", id:"top:menu", 
+			view:"menu",
+			id:"top:menu", 
 			css:"app_menu",
-			width:180, layout:"y", select:true,
+			layout:"y",
+			width: 150,
+			select:true,
 			template:"<span class='webix_icon #icon#'></span> #value# ",
 			data:[
 				{ value:"Dashboard", id:"data", icon:"wxi-columns" },
-				{ value:"Create Data", id:"create",  icon:"wxi-plus" }
+				{ value:"Profile", id:"profile",  icon:"wxi-user" }
 			]
 		};
 
@@ -32,5 +55,6 @@ export default class TopView extends JetView{
 	}
 	init(){
 		this.use(plugins.Menu, "top:menu");
+		// this.use(plugins.sidemenu,"top:menu")
 	}
 }
